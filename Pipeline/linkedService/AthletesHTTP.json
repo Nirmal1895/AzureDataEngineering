@@ -1,0 +1,12 @@
+{
+	"name": "AthletesHTTP",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://raw.githubusercontent.com/Nirmal1895/AzureDataEngineering/master/Olympic_Data_2024/athletes.csv",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
