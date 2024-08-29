@@ -19,21 +19,21 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
-							"requestMethod": "GET",
-							"requestTimeout": ""
+							"requestMethod": "GET"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "FlattenHierarchy"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -49,7 +49,7 @@
 								"sink": {
 									"name": "code",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -61,7 +61,7 @@
 								"sink": {
 									"name": "current",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -73,7 +73,7 @@
 								"sink": {
 									"name": "name",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -85,7 +85,7 @@
 								"sink": {
 									"name": "name_short",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -97,7 +97,7 @@
 								"sink": {
 									"name": "name_tv",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -109,7 +109,7 @@
 								"sink": {
 									"name": "gender",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -121,7 +121,7 @@
 								"sink": {
 									"name": "function",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -133,7 +133,7 @@
 								"sink": {
 									"name": "country_code",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -145,7 +145,7 @@
 								"sink": {
 									"name": "country",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -157,7 +157,7 @@
 								"sink": {
 									"name": "country_long",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -169,7 +169,7 @@
 								"sink": {
 									"name": "nationality",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -181,7 +181,7 @@
 								"sink": {
 									"name": "nationality_long",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -193,7 +193,7 @@
 								"sink": {
 									"name": "nationality_code",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -205,7 +205,7 @@
 								"sink": {
 									"name": "height",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -217,7 +217,7 @@
 								"sink": {
 									"name": "weight",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -229,7 +229,7 @@
 								"sink": {
 									"name": "disciplines",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -241,7 +241,7 @@
 								"sink": {
 									"name": "events",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -253,7 +253,7 @@
 								"sink": {
 									"name": "birth_date",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -265,7 +265,7 @@
 								"sink": {
 									"name": "birth_place",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -277,7 +277,7 @@
 								"sink": {
 									"name": "birth_country",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -289,7 +289,7 @@
 								"sink": {
 									"name": "residence_place",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -301,7 +301,7 @@
 								"sink": {
 									"name": "residence_country",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -313,7 +313,7 @@
 								"sink": {
 									"name": "nickname",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -325,7 +325,7 @@
 								"sink": {
 									"name": "hobbies",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -337,7 +337,7 @@
 								"sink": {
 									"name": "occupation",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -349,7 +349,7 @@
 								"sink": {
 									"name": "education",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -361,7 +361,7 @@
 								"sink": {
 									"name": "family",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -373,7 +373,7 @@
 								"sink": {
 									"name": "lang",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -385,7 +385,7 @@
 								"sink": {
 									"name": "coach",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -397,7 +397,7 @@
 								"sink": {
 									"name": "reason",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -409,7 +409,7 @@
 								"sink": {
 									"name": "hero",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -421,7 +421,7 @@
 								"sink": {
 									"name": "influence",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -433,7 +433,7 @@
 								"sink": {
 									"name": "philosophy",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -445,7 +445,7 @@
 								"sink": {
 									"name": "sporting_relatives",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -457,7 +457,7 @@
 								"sink": {
 									"name": "ritual",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -469,7 +469,7 @@
 								"sink": {
 									"name": "other_sports",
 									"type": "String",
-									"physicalType": "UTF8"
+									"physicalType": "String"
 								}
 							}
 						],
@@ -488,7 +488,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ADLS",
+						"referenceName": "Atheletes",
 						"type": "DatasetReference"
 					}
 				]
