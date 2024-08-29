@@ -19,7 +19,8 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
-							"requestMethod": "GET"
+							"requestMethod": "GET",
+							"requestTimeout": ""
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -28,7 +29,8 @@
 					"sink": {
 						"type": "ParquetSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "ParquetWriteSettings"
@@ -37,6 +39,440 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "code",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "current",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "current",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "name_short",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "name_short",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "name_tv",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "name_tv",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "gender",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gender",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "function",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "function",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "country_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "country_code",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "country",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "country_long",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "country_long",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nationality",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nationality",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nationality_long",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nationality_long",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nationality_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nationality_code",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "height",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "height",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "weight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "weight",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "disciplines",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "disciplines",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "events",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "events",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "birth_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "birth_date",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "birth_place",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "birth_place",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "birth_country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "birth_country",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "residence_place",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "residence_place",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "residence_country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "residence_country",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nickname",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nickname",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "hobbies",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hobbies",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "occupation",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "occupation",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "education",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "education",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "family",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "family",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "lang",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "lang",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "coach",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "coach",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "reason",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "reason",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "hero",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hero",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "influence",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "influence",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "philosophy",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "philosophy",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "sporting_relatives",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sporting_relatives",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ritual",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ritual",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "other_sports",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "other_sports",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
