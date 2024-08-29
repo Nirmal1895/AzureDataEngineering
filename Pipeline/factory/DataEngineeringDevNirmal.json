@@ -1,0 +1,9 @@
+{
+	"name": "DataEngineeringDevNirmal",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1ab756eb-a0ea-4c04-b8a9-dd7b9c3e84b5",
+		"tenantId": "2342f399-e471-4001-84be-35f6c094ce18"
+	}
+}
