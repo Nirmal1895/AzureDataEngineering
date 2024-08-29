@@ -13,7 +13,7 @@
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
-			"compressionCodec": "snappy",
+			"compressionCodec": "deflate",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
